@@ -1,6 +1,8 @@
-USE customerReviews
 
-CREATE TABLE customerReviews (
+
+\c reireviews
+
+CREATE TABLE IF NOT EXISTS reviews (
   id SERIAL NOT NULL,
   username VARCHAR(20) NOT NULL,
   postdate DATE NOT NULL,

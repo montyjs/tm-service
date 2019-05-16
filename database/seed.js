@@ -3,8 +3,15 @@ const faker = require('faker');
 const pool = require('./index.js');
 
 const urlSeed = ['someurl.url', ''];
-// requirement is haveing a seeding script in package json
-// idea
+
+const insert = (string, params) => {
+  pool.query(string, parmas, (err) => {
+    if (err) {
+      return console.error(err.message);
+    }
+    return console.log('data inserted')
+  })
+}
 
 const createSeed = (num) => {
   const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, recommended, images) VALUES ($1,$2,$3,$4,$5,$6,$7)';
@@ -25,13 +32,15 @@ const createSeed = (num) => {
     if (i % 5 === 0) {
       params[params.length - 1] = urlSeed.pop();
     }
-    pool.query(queryString, params, (err, result) => {
+    pool.query(queryString, params, (err) => {
       if (err) {
         return console.error(err.message);
       }
-      return console.log(result.rows);
+      return console.log('row inserted');
     });
   }
 };
 
 createSeed(6);
+
+module.exports = createSeed;

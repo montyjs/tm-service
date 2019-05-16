@@ -1,6 +1,6 @@
 {
   "name": "reviewsclone",
-  "version": "1",
+  "version": "1.0.0",
   "description": "clone of rei.com reviews component",
   "author": "Trevor Markel",
   "license": "",
@@ -8,7 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch"
+    "initialize-db": "psql -U tm -f schema.sql reireviews",
+    "seed-db": "node ./database/seed.js",
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon ./server/index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -23,7 +26,6 @@
     "webpack-cli": "^3.3.2"
   },
   "devDependencies": {
-    "@babel-preset-es2016": "^6.24.1",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
