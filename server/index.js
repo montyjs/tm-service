@@ -1,6 +1,7 @@
 const express = requie('express');
 const bodyParser = require('body-parser');
 const path = ('path');
+const port = 3002;
 
 const app = express();
 
@@ -13,4 +14,6 @@ app.get('/reviews', (req, res) => {
   res.sendStatus(200);
 });
 
-app
+app.list(port, () => {
+  console.log(`listenging on port ${port}`)
+});
