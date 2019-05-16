@@ -1,5 +1,3 @@
-CREATE DATABASE customerReviews
-
 USE customerReviews
 
 CREATE TABLE customerReviews (
