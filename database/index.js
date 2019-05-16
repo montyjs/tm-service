@@ -13,7 +13,7 @@ pool.query('SELECT * FROM reviews', (err, result) => {
   if (err) {
     return console.error(err.message);
   }
-  return console.log(result);
+  return console.log(result.rows);
 });
 
 module.exports = pool;

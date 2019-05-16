@@ -2,13 +2,15 @@
 const faker = require('faker');
 const pool = require('./index.js');
 
-const urlSeed = [];
+const urlSeed = ['someurl.url', ''];
 // requirement is haveing a seeding script in package json
 // idea
+
 const createSeed = (num) => {
-  const queryString = 'INSERT INTO customerReviews (userName, postDate, title, review, rating, recommended, images) VALUES (?,?,?,?,?,?,?)';
+  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, recommended, images) VALUES ($1,$2,$3,$4,$5,$6,$7)';
+  let params;
   for (let i = 0; i < num; i += 1) {
-    const params = [
+    params = [
       faker.name.findName(),
       faker.date.past(),
       faker.lorem.sentence(),
@@ -18,18 +20,18 @@ const createSeed = (num) => {
         max: 5,
       }),
       faker.random.boolean(),
-      null,
+      'randomUrl.url',
     ];
     if (i % 5 === 0) {
-      params.images = urlSeed.pop();
+      params[params.length - 1] = urlSeed.pop();
     }
     pool.query(queryString, params, (err, result) => {
       if (err) {
         return console.error(err.message);
       }
-      return console.log(result);
+      return console.log(result.rows);
     });
   }
 };
 
-createSeed(4);
+createSeed(6);

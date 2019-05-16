@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Review from './Review.jsx';
 
 class App extends React.Component {
   constructor(pros) {
@@ -8,8 +9,9 @@ class App extends React.Component {
     this.state = {
       reviews: []
     }
+    this.getReviews = this.getReviews.bind(this);
   }
-  getReviews = () => {
+  getReviews () {
     $.get('/reviews', (results) => {
       this.setState({
         reviews: results
@@ -17,7 +19,8 @@ class App extends React.Component {
     })
   }
 
-  render = () => (
+  render() {
+    return (
     <div></div>
   )
 }
