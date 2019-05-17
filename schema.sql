@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS reireviews;
+
+CREATE DATABASE reireviews;
 
 \c reireviews;
 
