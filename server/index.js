@@ -21,5 +21,5 @@ app.get('/reviews', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`listenging on port ${port}`);
+  console.log(`listening on port ${port}`);
 });
