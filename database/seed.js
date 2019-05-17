@@ -2,16 +2,7 @@
 const faker = require('faker');
 const pool = require('./index.js');
 
-const urlSeed = ['someurl.url', ''];
-
-const insert = (string, params) => {
-  pool.query(string, parmas, (err) => {
-    if (err) {
-      return console.error(err.message);
-    }
-    return console.log('data inserted')
-  })
-}
+const urlSeed = ['test1.url', 'test2.url', 'test3.url', 'test4.url', 'test5.url', 'test6.url', 'test7.url'];
 
 const createSeed = (num) => {
   const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, recommended, images) VALUES ($1,$2,$3,$4,$5,$6,$7)';
@@ -29,18 +20,17 @@ const createSeed = (num) => {
       faker.random.boolean(),
       'randomUrl.url',
     ];
-    if (i % 5 === 0) {
-      params[params.length - 1] = urlSeed.pop();
-    }
+    // if (i % 7 === 0) {
+    //   params[params.length - 1] = urlSeed.shift();
+    // }
     pool.query(queryString, params, (err) => {
       if (err) {
         return console.error(err.message);
       }
-      return console.log('row inserted');
     });
   }
 };
 
-createSeed(6);
+createSeed(100);
 
 module.exports = createSeed;
