@@ -7,9 +7,9 @@ const { getAll } = require('../database/index.js');
 const port = 3002;
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/../public')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/reviews', (req, res) => {
   getAll((result) => {
@@ -20,6 +20,6 @@ app.get('/reviews', (req, res) => {
   });
 });
 
-app.list(port, () => {
+app.listen(port, () => {
   console.log(`listenging on port ${port}`);
 });
