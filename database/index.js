@@ -9,11 +9,15 @@ const pool = new Pool({
   port: '5432',
 });
 
-pool.query('SELECT * FROM reviews', (err, result) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  return console.log(result.rows);
-});
+const getall = (cb) => {
+  const queryString = 'SELECT * FROM reviews';
+  pool.query(queryString, (err, result) => {
+    if (err) {
+      return console.error(err.message);
+    }
+    return cb(result.rows);
+  });
+};
 
-module.exports = pool;
+module.exports.pool = pool;
+module.exports.getAll = getall;

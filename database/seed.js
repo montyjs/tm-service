@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const faker = require('faker');
-const pool = require('./index.js');
+const { pool } = require('./index.js');
 
 const urlSeed = ['test1.url', 'test2.url', 'test3.url', 'test4.url', 'test5.url', 'test6.url', 'test7.url'];
 
