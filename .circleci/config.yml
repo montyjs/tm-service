@@ -6,6 +6,8 @@ jobs:
     branches:
       only:
         - appSetup
+    save_cache:
+      - key: v1-myapp-{{ arch }}-{{ checksum "package.json" }}
     steps:
       - checkout
       - run: npm install
