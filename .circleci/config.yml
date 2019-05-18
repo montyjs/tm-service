@@ -8,11 +8,11 @@ jobs:
         - appSetup
     steps:
       - restore_cache:
-        keys:
-          - v1-npm-deps-{{ checksum package.json }}
+          keys:
+            - v1-npm-deps-{{ checksum package.json }}
       - checkout
       - run: npm install
       - run: node ./test/index.test.js
       - save_cache:
-        keys:
-          - v1-npm-deps-{{ checksum package.json }}
+          keys:
+            - v1-npm-deps-{{ checksum package.json }}
