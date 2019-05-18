@@ -13,8 +13,6 @@ jobs:
       - checkout
       - run: npm install
       - run: node ./test/index.test.js
-
-    steps:
       - save_cache:
         keys:
          - v1-npm-deps-{{ checksum package.json }}
