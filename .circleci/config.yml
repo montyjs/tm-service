@@ -2,7 +2,8 @@
  jobs:
    build:
      docker:
-       - image: circleci/node:7
+       - image: circleci/node:6
      steps:
        - checkout
-       - run: node app.js
+       - run: npm install
+       - run: node ./test/index.test.js
