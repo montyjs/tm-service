@@ -9,10 +9,10 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - v1-npm-deps-{{ checksum package.json }}
+            - v1-npm-deps-{{ arch }}-{{ checksum package.json }}
       - checkout
       - run: npm install
       - run: node ./test/index.test.js
       - save_cache:
           keys:
-            - v1-npm-deps-{{ checksum package.json }}
+            - v1-npm-deps-{{ arch }}-{{ checksum package.json }}
