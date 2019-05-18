@@ -6,9 +6,15 @@ jobs:
     branches:
       only:
         - appSetup
-    save_cache:
-      - key: v1-myapp-{{ arch }}-{{ checksum "package.json" }}
     steps:
+      - restore_cache:
+        keys:
+         - v1-npm-deps-{{ checksum package.json }}
       - checkout
       - run: npm install
       - run: node ./test/index.test.js
+
+    steps:
+      - save_cache:
+        keys:
+         - v1-npm-deps-{{ checksum package.json }}
