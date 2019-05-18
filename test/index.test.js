@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const functions = require('./index.js');
 
 test('should return 4 for adding 2 + 2', () => {
