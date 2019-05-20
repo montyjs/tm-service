@@ -9,10 +9,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys: dependency-cache-{{ checksum "package.json" }}
+          keys: dependencies-cache-{{ checksum "package.json" }}
       - run: npm install
       - run: npm test
       - save_cache:
-          key: dependencies-cache-{{ checksum package.json }}
+          key: dependencies-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
