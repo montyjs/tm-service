@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews (
   id SERIAL NOT NULL,
   username VARCHAR(30) NOT NULL,
-  postdate DATE NOT NULL,
+  postdate VARCHAR(20),
   title VARCHAR(100) NOT NULL,
   review VARCHAR(1000) NOT NULL,
   rating INT NOT NULL,
