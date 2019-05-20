@@ -14,5 +14,5 @@ jobs:
       - run: npm test
       - save_cache:
           key: v1-dependencies-{{ checksum package.json }}
-            - paths:
+            paths:
               - node_modules
