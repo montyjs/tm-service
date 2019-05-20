@@ -10,9 +10,12 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }
+            - v1-dependencies-
       - checkout
       - run: npm install
       - run: npm test
-      # - save_cache:
-      #     keys:
-      #       - v1-dependencies-{{ checksum package.json }}
+      - save_cache:
+          keys:
+            - v1-dependencies-{{ checksum package.json }}
+            - paths:
+              - package.json
