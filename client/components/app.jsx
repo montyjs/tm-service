@@ -1,6 +1,6 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
-import $ from 'jquery';
-import Review from './Review.jsx';
+import Reviews from './Reviews.jsx';
 
 class App extends React.Component {
   constructor(pros) {
@@ -8,11 +8,32 @@ class App extends React.Component {
     this.state = {
       reviews: [],
     };
+    this.getReviews = this.getReviews.bind(this);
+  }
+
+  componentDidMount() {
+    this.getReviews();
+  }
+
+  getReviews() {
+    fetch('/reviews')
+      .then(response => response.json())
+      .then((result) => {
+        this.setState({
+          reviews: result,
+        });
+      });
   }
 
   render() {
     return (
-      <div>Something new from the react componenet</div>
+      <div>
+        Something new from the react componenet
+        {this.state.reviews.map(entry => (
+          <Reviews review={entry} />
+        ))}
+
+      </div>
     );
   }
 }
