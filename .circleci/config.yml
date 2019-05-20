@@ -11,7 +11,7 @@ jobs:
       - restore_cache:
           keys: dependencies-cache-{{ checksum "package.json" }}
       - run: npm install
-      -run:
+      - run:
         command: npm run server-dev
         background: true
       - run: npm test
