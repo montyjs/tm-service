@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Review from './Review.jsx';
 
@@ -7,22 +6,15 @@ class App extends React.Component {
   constructor(pros) {
     super(pros);
     this.state = {
-      reviews: []
-    }
-    this.getReviews = this.getReviews.bind(this);
-  }
-  getReviews () {
-    $.get('/reviews', (results) => {
-      this.setState({
-        reviews: results
-      })
-    })
+      reviews: [],
+    };
   }
 
   render() {
     return (
-    <div></div>
-  )
+      <div>Something new from the react componenet</div>
+    );
+  }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;
