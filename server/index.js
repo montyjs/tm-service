@@ -11,6 +11,10 @@ app.use(express.static(path.join(__dirname, '/../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+  res.sendStatus(200);
+});
+
 app.get('/reviews', (req, res) => {
   getAll((result) => {
     if (!result) {
