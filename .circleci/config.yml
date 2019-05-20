@@ -7,15 +7,12 @@ jobs:
       only:
         - appSetup
     steps:
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }
-            - v1-dependencies-
       - checkout
+      - restore_cache:
+          keys: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - run: npm test
       - save_cache:
-          keys:
-            - v1-dependencies-{{ checksum package.json }}
+          key: v1-dependencies-{{ checksum package.json }}
             - paths:
-              - package.json
+              - node_modules
