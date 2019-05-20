@@ -12,8 +12,8 @@ jobs:
           keys: dependencies-cache-{{ checksum "package.json" }}
       - run: npm install
       - run:
-        command: npm run server-dev
-        background: true
+          command: npm run server-dev
+          background: true
       - run: npm test
       - save_cache:
           key: dependencies-cache-{{ checksum "package.json" }}
