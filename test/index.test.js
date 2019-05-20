@@ -10,7 +10,7 @@ test('should return 4 for adding 2 + 2', () => {
 
 test('server should retrieve and serve data from database', () => {
   expect.assertions(1);
-  return rp('http://localhost:3002/reviews').then((response) => {
+  return rp('http://127.0.0.1:3002/reviews').then((response) => {
     expect(response).toBeDefined();
   });
 });
