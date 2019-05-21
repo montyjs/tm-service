@@ -22,12 +22,13 @@ const createSeed = (num) => {
         min: 0,
         max: 5,
       }),
+      faker.random.number({
+        min: 0,
+        max: 5,
+      }),
       faker.random.boolean(),
       'randomUrl.url',
     ];
-    // if (i % 7 === 0) {
-    //   params[params.length - 1] = urlSeed.shift();
-    // }
     pool.query(queryString, params, (err) => {
       if (err) {
         return console.error(err.message);

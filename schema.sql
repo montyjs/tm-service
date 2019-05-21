@@ -8,11 +8,12 @@ DROP TABLE IF EXISTS reviews;
 
 CREATE TABLE reviews (
   id SERIAL NOT NULL,
-  username VARCHAR(30) NOT NULL,
-  postdate VARCHAR(20),
-  title VARCHAR(100) NOT NULL,
-  review VARCHAR(1000) NOT NULL,
+  username VARCHAR NOT NULL,
+  postdate VARCHAR,
+  title VARCHAR NOT NULL,
+  review VARCHAR NOT NULL,
   rating INT NOT NULL,
+  sizerating INT NOT NULL,
   recommended BOOLEAN NOT NULL,
-  images VARCHAR(1000) NOT NULL
+  images VARCHAR NOT NULL
 );

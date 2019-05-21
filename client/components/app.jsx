@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 import React from 'react';
 import Reviews from './Reviews.jsx';
@@ -32,7 +34,6 @@ class App extends React.Component {
         {this.state.reviews.map(entry => (
           <Reviews review={entry} />
         ))}
-
       </div>
     );
   }
