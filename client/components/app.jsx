@@ -30,7 +30,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        Something new from the react componenet
         {this.state.reviews.map(entry => (
           <Reviews review={entry} />
         ))}

@@ -3,16 +3,12 @@ const faker = require('faker');
 const moment = require('moment');
 const { pool } = require('./index.js');
 
-faker.locale = 'en';
-
-const urlSeed = ['test1.url', 'test2.url', 'test3.url', 'test4.url', 'test5.url', 'test6.url', 'test7.url'];
-
 const createSeed = (num) => {
   const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, recommended, images) VALUES ($1,$2,$3,$4,$5,$6,$7)';
   let params;
   let date;
   for (let i = 0; i < num; i += 1) {
-    date = JSON.stringify(faker.date.past(10, '2019-05-01')).slice(0, 11).split("-").join("");
+    date = JSON.stringify(faker.date.past(10, '2019-05-01')).slice(0, 11).split('-').join('');
     params = [
       faker.name.findName(),
       moment(date, 'YYYYMMDD').fromNow(),
