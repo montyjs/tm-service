@@ -1,0 +1,41 @@
+
+#review-component {
+  .stars {
+    font-size: 24px;
+    color: #bd5b0d;
+  }
+  .review-footer {
+    display: inline-block;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 2px 10px;
+    float: left;
+    color: #333;
+    font-size: 13px;
+    line-height:19.5px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 700;
+    font-variant: normal;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+    border-radius: 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #ccc;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #ccc;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ccc;
+    border-left-width: 0;
+    border-left-style: solid;
+    border-left-color: #ccc;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
