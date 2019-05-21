@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
 /* eslint-disable quotes */
 const { pool } = require('./index');
 
@@ -40,11 +42,11 @@ const sizeratings = [4, 3, 3, 3, 3, 3, 0, 3, 2, 2, 3, 2, 4, 3];
 
 const stars = [5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
 
-const postdates = [`7 years ago`, ` 6 years ago`, `3 years ago`, `10 months ago`, `2 weeks ago`, `1 year ago`, `6 months ago`, `3 weeks ago`, `7 years ago`, `5 years ago`, `1 week ago`, `2 months ago`, `5 years ago`, `1 years ago` ]
+const postdates = [`7 years ago`, ` 6 years ago`, `3 years ago`, `10 months ago`, `2 weeks ago`, `1 year ago`, `6 months ago`, `3 weeks ago`, `7 years ago`, `5 years ago`, `1 week ago`, `2 months ago`, `5 years ago`, `1 years ago`];
 
 const data = [];
 
-for (let i = 0; i < reviews.length; i++) {
+for (let i = 0; i < reviews.length; i += 1) {
   data.push({
     username: usernames[i],
     postdate: postdates[i],
