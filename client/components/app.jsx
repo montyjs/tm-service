@@ -55,7 +55,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className="content-title">
-          <h4 className="title">This is my review</h4>
+          This is my review
         </div>
         <div className="content-body">
           <div className="review-data">
