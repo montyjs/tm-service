@@ -39,9 +39,9 @@ class App extends React.Component {
   }
 
   upVote(event) {
-    let beginning = event.target.innerText.slice(0, -2);
-    let end = +event.target.innerText.slice(-2) + 1;
-    return beginning + end;
+    const start = event.target.innerText.slice(0, -2);
+    const end = +event.target.innerText.slice(-2) + 1;
+    return start + end;
   }
 
   render() {

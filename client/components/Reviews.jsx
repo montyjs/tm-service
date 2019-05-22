@@ -28,6 +28,10 @@ const Reviews = (props) => (
       <div className="review-data">
         {props.review.review}
       </div>
+      <div className="images">
+        <div className="image"> </div>
+        <div className="image"> </div>
+      </div>
       <div className="recommended">
         <p>
           <span className="check">✔</span>
