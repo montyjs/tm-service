@@ -2,15 +2,25 @@
 #review-component {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+
   .parent-level {
-    border-top: 1px solid #D3D3D3;
+
+    margin: 0 auto;
+    justify-content: center;
+    padding: 0 12%;
+
+    .top-border {
+      border-top: 1px solid #D3D3D3;
+    }
+
   }
   .top-level {
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid #D3D3D3;
     padding-top: 10px;
-    margin-top: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
 
     .content-header {
       display: flex;
@@ -61,19 +71,20 @@
       display: flex;
       flex-direction: row;
       margin-bottom: 5px;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
 
       button {
-        -webkit-appearance: button;
         background-color: #EDEDED;
+        font-size: 13px;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
         padding: 2px 10px;
         margin: 0px 5px 0px 0px;
-        font-weight: 700;
-        font-family: Arial, Helvetica, sans-serif;
+        height: 25px;
       }
 
       .helpful {
-        margin-right: 10px;
+        padding: 4px 10px 4px 0px;
       }
     }
   }

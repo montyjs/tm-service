@@ -16,7 +16,6 @@ const Reviews = (props) => (
       </div>
       <div className="author">
         {props.review.username}
-        {console.log(props.review.rating)}
       </div>
       <div className="timestamp">
         · {props.review.postdate}
@@ -42,8 +41,8 @@ const Reviews = (props) => (
         Helpful?
       </div>
       <div className="buttons">
-        <button type="button" className="btn-yes">Yes · 25</button>
-        <button type="button" className="btn-no">No · 25</button>
+        <button type="button" className="btn-yes" onClick={(e) => { e.target.innerText = props.upVote(e); }}>Yes · 25</button>
+        <button type="button" className="btn-no" onClick={(e) => { e.target.innerText = props.upVote(e); }}>No · 25</button>
         <button type="button" className="btn-report">Report as inappropriate</button>
       </div>
     </div>

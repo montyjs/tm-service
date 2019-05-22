@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable import/extensions */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
@@ -11,6 +12,7 @@ class App extends React.Component {
       reviews: [],
     };
     this.count = 4;
+    this.upVote = this.upVote.bind(this);
     this.starColor = this.starColor.bind(this);
     this.getReviews = this.getReviews.bind(this);
   }
@@ -36,12 +38,20 @@ class App extends React.Component {
     return {};
   }
 
+  upVote(event) {
+    let beginning = event.target.innerText.slice(0, -2);
+    let end = +event.target.innerText.slice(-2) + 1;
+    return beginning + end;
+  }
+
   render() {
     return (
       <div className="parent-level">
-        {this.state.reviews.map(review => (
-          <Reviews review={review} starColor={this.starColor} />
-        ))}
+        <div className="top-border">
+          {this.state.reviews.map(review => (
+            <Reviews review={review} starColor={this.starColor} upVote={this.upVote} />
+          ))}
+        </div>
       </div>
     );
   }
