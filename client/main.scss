@@ -50,7 +50,17 @@
     .content-footer {
       display: flex;
       flex-direction: row;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+      padding-bottom: 10px;
+
+      button {
+        -webkit-appearance: button;
+        background-color: #EDEDED;
+        padding: 2px 10px;
+        margin: 0px 5px 0px 0px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
       .helpful {
         margin-right: 10px;
