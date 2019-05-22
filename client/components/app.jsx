@@ -10,6 +10,8 @@ class App extends React.Component {
     this.state = {
       reviews: [],
     };
+    this.count = 4;
+    this.starColor = this.starColor.bind(this);
     this.getReviews = this.getReviews.bind(this);
   }
 
@@ -27,16 +29,22 @@ class App extends React.Component {
       });
   }
 
+  starColor(num) {
+    if (this.count >= num) {
+      return { color: '#bd5b0d'}
+    }
+  }
+
   render() {
     return (
       <div className="top-level">
         <div className="content-header">
           <div className="stars">
-            <span className="star-1">★</span>
-            <span className="star-2">★</span>
-            <span className="star-3">★</span>
-            <span className="star-4">★</span>
-            <span className="star-5">★</span>
+            <span style={this.starColor(1)} className="star-1">★</span>
+            <span style={this.starColor(2)} className="star-2">★</span>
+            <span style={this.starColor(3)} className="star-3">★</span>
+            <span style={this.starColor(4)} className="star-4">★</span>
+            <span style={this.starColor(5)} className="star-5">★</span>
           </div>
           <div className="username">
             Bobby Joe
