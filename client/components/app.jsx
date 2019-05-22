@@ -29,79 +29,42 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="content-container">
-          <div className="content-core">
-            <div className="content-header">
-              <div className="content-data-summary">
-                <div className="content-data-meta">
-                  <span className="content-rating rating-ratio">
-                    <meta itemProp="ratingValue" content="5" />
-                    <meta itemProp="bestRating" content="5" />
-                    <span className="bv-rating-stars-container">
-                      <abbr title="5 out of 5 stars." className="bv-rating bv-rating-stars bv-rating-stars-off" aria-hidden="true"> ☆☆☆☆☆ </abbr>
-                      <abbr title="5 out of 5 stars." style={{ width: '100%' }} className="bv-rating-max bv-rating-stars bv-rating-stars-on" aria-hidden="true"> ☆☆☆☆☆ </abbr>
-                      <span className="bv-off-screen">5 out of 5 stars.</span>
-                    </span>
-                  </span>
-                </div>
-                <div className="conent-title-container">
-                  <h4 className="content-title">Great shoes</h4>
-                </div>
-              </div>
-            </div>
-            <div className="content-details-offset-on">
-              <div className="content-summary">
-                <div className="content-summary-body" itemProp="reviewBody">
-                  <div className="content-summary-body-text">
-                    <p>
-                      Great first pair of shoes.  Looking forward to getting outside more with them.
-                    </p>
-                  </div>
-                  <div className="content-data">
-                    <div className="contnet-product-questions">  </div>
-                    <div className="content-tag-dimensions">  </div>
-                    <dl className="content-data-recommend-yes">
-                      <dt className="content-data-label-container">
-                        <span className="content-data-icon" aria-hidden="true">✔</span>
-                        <span className="content-data-label">Yes</span>
-                        ,
-                      </dt>
-                      <dd className="content-data-value">  I recommend this product.  </dd>
-                    </dl>
-                    <ul className = "content-media-container">
-                      This is where images would go.
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className="top-level">
+        <div className="content-header">
+          <div className="stars">
+            ★★★★★
+          </div>
+          <div className="username">
+            Bobby Joe
+          </div>
+          <div className="timestamp">
+            · 7 years ago
           </div>
         </div>
-        <div className="content-actions-container">
-          <div className="feedback-container">
-            <dl className="content-feedback-vote">
-              <dt className="content-feedback-vote-request">
-                <p>Helpful?</p>
-              </dt>
-              <dd className="content-feeback-btn-container">
-                <button type="button" className="content-btn-feedback-yes" onClick="return false;">
-                  <span aria-hidden="true">
-                    Yes ·
-                    <span className="content-btn-count" aria-hidden="true">26</span>
-                  </span>
-                </button>
-                <button type="button" className="content-btn-feedback-no" onClick="return false;">
-                  <span aria-hidden="true">
-                    No ·
-                    <span className="content-btn-count" aria-hidden="true">5</span>
-                  </span>
-                </button>
-              </dd>
-              <dd className="feedback-vote">
-                <button type="button" className="content-report-btn" onClick="return false">Report as inappropriate</button>
-              </dd>
-            </dl>
+        <div className="content-title">
+          <h4 className="title">This is my review</h4>
+        </div>
+        <div className="content-body">
+          <div className="review-data">
+            Great shoes right out of the box.Spent 5 hours clmbing in them the day after I bought them and the performed great.
+            They were able to hold small toe holds and slick smears(which is what I was looking for).
+            They started forming to my feet after the first couple of routes, but did not get flimsy.
+            I would recommend these to anyone contimplating the Mythos or similar level shoes, as I was keeping up with and finishing things my budy wearing those were not.
+            I had also looked at those shoes but decided that the $60 price difference was worth the shot.
+            Still will problably end up with them in the future, but these are great shoes to grow with.
+          </div>
+          <div className="recommended">
+            ✔ Yes, I recommend this product
+          </div>
+        </div>
+        <div className="content-footer">
+          <div className="helpful">
+            Helpful?
+          </div>
+          <div className="buttons">
+            <button type="button" className="btn-yes">Yes · 25</button>
+            <button type="button" className="btn-no">No · 25</button>
+            <button type="button" className="btn-report">Report as inappropriate</button>
           </div>
         </div>
       </div>
