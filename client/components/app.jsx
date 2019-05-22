@@ -32,7 +32,11 @@ class App extends React.Component {
       <div className="top-level">
         <div className="content-header">
           <div className="stars">
-            ★★★★★
+            <span className="star-1">★</span>
+            <span className="star-2">★</span>
+            <span className="star-3">★</span>
+            <span className="star-4">★</span>
+            <span className="star-5">★</span>
           </div>
           <div className="username">
             Bobby Joe

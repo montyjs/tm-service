@@ -8,6 +8,8 @@
     flex-direction: column;
     border-top: 1px solid #D3D3D3;
     border-bottom: 1px solid #D3D3D3;
+    padding-top: 10px;
+    margin-top: 5px;
 
     .content-header {
       display: flex;
@@ -15,7 +17,11 @@
 
       .stars {
         font-size: 24px;
-        color: #bd5b0d;
+        color: #c5c5c5;
+
+        .star-1 {
+          color: #bd5b0d;
+        }
       }
 
       .username {
