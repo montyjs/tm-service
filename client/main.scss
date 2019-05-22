@@ -2,11 +2,12 @@
 #review-component {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-
+  .parent-level {
+    border-top: 1px solid #D3D3D3;
+  }
   .top-level {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #D3D3D3;
     border-bottom: 1px solid #D3D3D3;
     padding-top: 10px;
     margin-top: 5px;
@@ -20,7 +21,7 @@
         color: #c5c5c5;
       }
 
-      .username {
+      .author {
         padding: 5px 5px 0px 10px;
         font-weight: 700;
       }
