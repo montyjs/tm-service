@@ -31,8 +31,9 @@ class App extends React.Component {
 
   starColor(num) {
     if (this.count >= num) {
-      return { color: '#bd5b0d'}
+      return { color: '#bd5b0d' };
     }
+    return {};
   }
 
   render() {
@@ -67,7 +68,7 @@ class App extends React.Component {
           </div>
           <div className="recommended">
             <p>
-              ✔
+              <span className="check">✔</span>
               <span className="yes"> Yes</span>
               , I recommend this product
             </p>

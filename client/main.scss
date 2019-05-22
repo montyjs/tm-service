@@ -45,6 +45,13 @@
     .recommended {
       margin: 20px 0;
 
+      .check {
+        background-color: black;
+        color: white;
+        border-radius: 50%;
+        font-size: 16px;
+      }
+
       .yes{
         font-weight: 700;
       }

@@ -18,6 +18,7 @@
 ## Usage
 
 > Some usage instructions
+A component to list customer reviews of a product.
 
 ## Requirements
 
@@ -36,4 +37,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
