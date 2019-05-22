@@ -54,7 +54,11 @@ class App extends React.Component {
             Still will problably end up with them in the future, but these are great shoes to grow with.
           </div>
           <div className="recommended">
-            ✔ Yes, I recommend this product
+            <p>
+              ✔
+              <span className="yes"> Yes</span>
+              , I recommend this product
+            </p>
           </div>
         </div>
         <div className="content-footer">

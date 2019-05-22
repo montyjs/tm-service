@@ -1,10 +1,13 @@
 
 #review-component {
     font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 
   .top-level {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid #D3D3D3;
+    border-bottom: 1px solid #D3D3D3;
 
     .content-header {
       display: flex;
@@ -39,10 +42,15 @@
 
     .recommended {
       margin: 20px 0;
+
+      .yes{
+        font-weight: 700;
+      }
     }
     .content-footer {
       display: flex;
       flex-direction: row;
+      margin-bottom: 10px;
 
       .helpful {
         margin-right: 10px;
