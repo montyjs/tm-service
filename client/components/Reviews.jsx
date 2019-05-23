@@ -13,7 +13,7 @@ const Reviews = (props) => (
   <div className="top-level">
     <Header
       starColor={props.starColor}
-      userName={props.review.username}
+      username={props.review.username}
       postdate={props.review.postdate}
       rating={props.review.rating}
     />
