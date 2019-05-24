@@ -6,7 +6,7 @@ import React from 'react';
 
 const Body = (props) => {
   let recommendation;
-  if (props.recommended) {
+  if (props.recommended === true) {
     recommendation = (
       <div>
         <div className="mark">✔</div>

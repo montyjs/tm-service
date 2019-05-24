@@ -4,10 +4,8 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/montyjs/mg-product-wrapper
+  - https://github.com/montyjs/jb-description
 
 ## Table of Contents
 
@@ -18,7 +16,12 @@
 ## Usage
 
 > Some usage instructions
-Builds a structure to display reviews of a product.  Allows attachment of up to 2 images for each review, voting on review usefulness, and review to offer rating of the product.
+- run 'npm install' for dependencies
+- run script 'initialize-db' to setup the database
+- run script 'real-seed' to seed the database
+- run script 'build-dev' to startup webpack
+- run script 'server-dev' to startup the server
+
 
 ## Requirements
 
