@@ -9,7 +9,7 @@ const pool = new Pool({
   port: '5432',
 });
 
-const getall = (cb) => {
+const getAll = (cb) => {
   const queryString = 'SELECT * FROM reviews';
   pool.query(queryString, (err, result) => {
     if (err) {
@@ -20,4 +20,4 @@ const getall = (cb) => {
 };
 
 module.exports.pool = pool;
-module.exports.getAll = getall;
+module.exports.getAll = getAll;

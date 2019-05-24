@@ -7,9 +7,13 @@ const { getAll } = require('../database/index.js');
 const port = 3002;
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/../public')));
+app.use(express.static(path.join(__dirname, '/../public/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// app.get('/', (req, res) => {
+//   res.sendStatus(200);
+// });
 
 app.get('/reviews', (req, res) => {
   getAll((result) => {

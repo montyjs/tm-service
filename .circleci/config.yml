@@ -2,11 +2,20 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:6
+      - image: circleci/node:10.15.1
     branches:
       only:
         - appSetup
     steps:
       - checkout
+      - restore_cache:
+          keys: dependencies-{{ checksum "package.json" }}
       - run: npm install
-      - run: node ./test/index.test.js
+      - run:
+          command: npm run server-dev
+          background: true
+      - run: npm test
+      - save_cache:
+          key: dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
