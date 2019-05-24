@@ -10,3 +10,10 @@ describe('Should render', () => {
     expect(wrapper);
   });
 });
+
+describe('Should render props', () => {
+  const propsWrapper = shallow(<Title title="Test Title" />);
+  it('should render the passed in title', () => {
+    expect(propsWrapper.find('.content-title').text()).toBe('Test Title');
+  });
+});
