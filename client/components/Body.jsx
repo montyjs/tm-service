@@ -32,8 +32,8 @@ const Body = (props) => {
         {recommendation}
       </div>
       <div className="images">
-        <div className="image"> </div>
-        <div className="image"> </div>
+        <div className="image1"> </div>
+        <div className="image2"> </div>
       </div>
     </div>
   );
