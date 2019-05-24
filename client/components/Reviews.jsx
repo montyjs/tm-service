@@ -26,6 +26,8 @@ const Reviews = (props) => (
       yes={props.review.yesvote}
       no={props.review.novote}
       upVote={props.upVote}
+      showImages={props.showImages}
+      showRecommended={props.showRecommended}
     />
   </div>
 );
