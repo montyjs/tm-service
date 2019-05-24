@@ -5,7 +5,7 @@ const moment = require('moment');
 const { pool } = require('./index.js');
 
 const createSeed = (num) => {
-  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, recommended, yesvote, novote, images) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)';
+  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, sizerating, recommended, yesvote, novote, images) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)';
   let params;
   let date;
   for (let i = 0; i < num; i += 1) {
@@ -23,11 +23,12 @@ const createSeed = (num) => {
         min: 0,
         max: 5,
       }),
-      faker.ranomd.number({
+      faker.random.boolean(),
+      faker.random.number({
         min: 0,
         max: 50,
       }),
-      faker.ranomd.number({
+      faker.random.number({
         min: 0,
         max: 50,
       }),
