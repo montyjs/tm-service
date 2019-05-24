@@ -18,7 +18,7 @@
 ## Usage
 
 > Some usage instructions
-A component to list customer reviews of a product.
+Builds a structure to display reviews of a product.  Allows attachment of up to 2 images for each review, voting on review usefulness, and review to offer rating of the product.
 
 ## Requirements
 
@@ -28,6 +28,9 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - etc
 
 ## Development
+
+- run script: initialize-db
+- run script: seed-db
 
 ### Installing Dependencies
 

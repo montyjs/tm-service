@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 const rp = require('request-promise');
-const { getAll } = require('../database/index.js');
 
 test('server should respond with 200 on get request', () => {
   expect.assertions(1);
