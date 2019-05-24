@@ -20,7 +20,7 @@ const Reviews = (props) => (
     <Title title={props.review.title} />
     <Body
       review={props.review.review}
-      recommended={1}
+      recommended={props.review.recommended}
     />
     <Footer upVote={props.upVote} />
   </div>
