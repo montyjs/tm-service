@@ -21,6 +21,8 @@ const Reviews = (props) => (
     <Body
       review={props.review.review}
       recommended={props.review.recommended}
+      showImages={props.showImages}
+      showRecommended={props.showRecommended}
     />
     <Footer
       yes={props.review.yesvote}

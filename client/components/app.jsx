@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable import/extensions */
 /* eslint-disable react/destructuring-assignment */
@@ -15,6 +16,8 @@ class App extends React.Component {
     this.upVote = this.upVote.bind(this);
     this.starColor = this.starColor.bind(this);
     this.getReviews = this.getReviews.bind(this);
+    this.showImages = this.showImages.bind(this);
+    this.showRecommended = this.showRecommended.bind(this);
   }
 
   componentDidMount() {
@@ -44,12 +47,57 @@ class App extends React.Component {
     return start + end;
   }
 
+  showImages(image1, image2) {
+    if (image1 && !image2) {
+      return (
+        <div className="images">
+          <div className="image1"> </div>
+        </div>
+      );
+    }
+    if (image1 && image2) {
+      return (
+        <div className="images">
+          <div className="image1"> </div>
+          <div className="image2"> </div>
+        </div>
+      );
+    }
+  }
+
+  showRecommended(recommendation) {
+    if (recommendation === true) {
+      return (
+        <div>
+          <div className="mark">✔</div>
+          <span className="recommendation"> Yes</span>
+            , I recommend this product
+        </div>
+      );
+    }
+    if (recommendation === false) {
+      return (
+        <div>
+          <div className="mark">✘</div>
+          <span className="recommendation"> No</span>
+            , I don't recommend this product
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="parent-level">
         <div className="top-border">
           {this.state.reviews.map(review => (
-            <Reviews review={review} starColor={this.starColor} upVote={this.upVote} />
+            <Reviews
+              review={review}
+              starColor={this.starColor}
+              upVote={this.upVote}
+              showRecommended={this.showRecommended}
+              showImages={this.showImages}
+            />
           ))}
         </div>
       </div>
