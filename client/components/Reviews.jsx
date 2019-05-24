@@ -22,7 +22,11 @@ const Reviews = (props) => (
       review={props.review.review}
       recommended={props.review.recommended}
     />
-    <Footer upVote={props.upVote} />
+    <Footer
+      yes={props.review.yesvote}
+      no={props.review.novote}
+      upVote={props.upVote}
+    />
   </div>
 );
 
