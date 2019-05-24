@@ -42,6 +42,10 @@ const sizeratings = [4, 3, 3, 3, 3, 3, 0, 3, 2, 2, 3, 2, 4, 3];
 
 const stars = [5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
 
+const yesvote = [0, 10, 6, 22, 41, 9, 30, 18, 11, 22, 39, 25, 13, 15, 5];
+
+const novote = [4, 6, 1, 8, 9, 0, 7, 3, 5, 10, 2, 6, 0, 5, 9];
+
 const postdates = [`7 years ago`, ` 6 years ago`, `3 years ago`, `10 months ago`, `2 weeks ago`, `1 year ago`, `6 months ago`, `3 weeks ago`, `7 years ago`, `5 years ago`, `1 week ago`, `2 months ago`, `5 years ago`, `1 years ago`];
 
 const data = [];
@@ -55,12 +59,14 @@ for (let i = 0; i < reviews.length; i += 1) {
     rating: stars[i],
     sizerating: sizeratings[i],
     recommended: true,
+    yes: yesvote[i],
+    no: novote[i],
     images: false,
   });
 }
 
 const realSeed = (entrydata) => {
-  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, sizerating,recommended, images) VALUES ($1,$2,$3,$4,$5,$6,$7, $8)';
+  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, sizerating, recommended, yesvote, novote, images) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)';
   let params;
   let obj;
   for (let i = 0; i < data.length; i += 1) {
@@ -73,6 +79,8 @@ const realSeed = (entrydata) => {
       obj.rating,
       obj.sizerating,
       true,
+      obj.yes,
+      obj.no,
       'someurl.url',
     ];
     pool.query(queryString, params, (err) => {

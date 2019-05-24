@@ -15,5 +15,7 @@ CREATE TABLE reviews (
   rating INT NOT NULL,
   sizerating INT NOT NULL,
   recommended BOOLEAN NOT NULL,
+  yesvote INT NOT NULL,
+  novote INT NOT NULL,
   images VARCHAR NOT NULL
 );
