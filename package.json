@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest --config jest-preset.js",
-    "initialize-db": "psql -d postgres -U tm -f schema.sql",
+    "initialize-db": "cross-var psql -d postgres -U tm -f schema.sql",
     "seed-db": "node ./database/seed.js",
     "real-seed": "node ./database/realData.js",
     "build-dev": "webpack -d --watch",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cross-var": "^1.1.0",
     "dotenv": "^8.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",

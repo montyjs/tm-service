@@ -17,6 +17,8 @@
 
 > Some usage instructions
 - run 'npm install' for dependencies
+- Create a .env file that will contain your postgres login credentials, and the the server port you want to use
+- Add your username in to the script: 'initialize-db' in the package json
 - run script 'initialize-db' to setup the database
 - run script 'real-seed' to seed the database
 - run script 'build-dev' to startup webpack
