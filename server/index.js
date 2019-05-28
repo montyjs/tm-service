@@ -21,7 +21,7 @@ app.get('/reviews', (req, res) => {
 });
 
 app.get('/bundle', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/dist/bundle.js'));
+  res.sendFile(path.join(__dirname, '../public/dist/bundle.js'));
 });
 
 
