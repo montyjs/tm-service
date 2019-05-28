@@ -11,4 +11,4 @@ const Index = () => (
   </div>
 );
 
-ReactDOM.render(<Index />, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('reviews'));
