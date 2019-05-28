@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const { getAll } = require('../database/index.js');
 
-const port = 3002;
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/../public/dist')));
