@@ -87,11 +87,19 @@ class App extends React.Component {
   }
 
   render() {
+    const methods = {
+      count: this.count,
+      upVote: this.upVote,
+      starColor: this.starColor,
+      getReviews: this.getReviews,
+      showImages: this.showImages,
+      showRecommended: this.showRecommended,
+    };
     return (
       <div className="parent-level">
         <div className="top-border">
           {this.state.reviews.map(review => (
-            <Reviews review={review} starColor={this.starColor} upVote={this.upVote} />
+            <Reviews review={review} methods={methods} />
           ))}
         </div>
       </div>

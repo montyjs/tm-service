@@ -9,26 +9,38 @@ import Title from './Title.jsx';
 import Body from './Body.jsx';
 import Footer from './Footer.jsx';
 
-const Reviews = (props) => (
+const PropTypes = require('prop-types');
+
+const Reviews = ({ review, methods }) => (
   <div className="top-level">
     <Header
-      starColor={props.starColor}
-      username={props.review.username}
-      postdate={props.review.postdate}
-      rating={props.review.rating}
+      starColor={methods.starColor}
+      username={review.username}
+      postdate={review.postdate}
+      rating={review.rating}
     />
-    <Title title={props.review.title} />
+    <Title title={review.title} />
     <Body
-      review={props.review.review}
-      recommended={props.review.recommended}
+      review={review.review}
+      recommended={review.recommended}
     />
     <Footer
-      yes={props.review.yesvote}
-      no={props.review.novote}
-      upVote={props.upVote}
+      yes={methods.yesvote}
+      no={methods.novote}
+      upVote={methods.upVote}
     />
   </div>
 );
+
+Reviews.propTypes = {
+  review: PropTypes.object,
+  methods: PropTypes.object,
+};
+
+Reviews.defaultProps = {
+  review: {},
+  methods: {},
+};
 
 
 export default Reviews;
