@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -11,10 +12,6 @@ app.use(express.static(path.join(__dirname, '/../public/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.get('/', (req, res) => {
-//   res.sendStatus(200);
-// });
-
 app.get('/reviews', (req, res) => {
   getAll((result) => {
     if (!result) {
@@ -24,6 +21,6 @@ app.get('/reviews', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
+app.listen(process.env.SERVER_PORT, () => {
+  console.log(`listening on port ${process.env.SERVER_PORT}`);
 });
