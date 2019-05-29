@@ -13,7 +13,7 @@
     "seed-db": "node ./database/seed.js",
     "real-seed": "node ./database/realData.js",
     "build-dev": "webpack -d --watch",
-    "server-dev": "nodemon ./server/index.js"
+    "start": "nodemon ./server/index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
