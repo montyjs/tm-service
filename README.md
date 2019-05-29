@@ -17,15 +17,16 @@
 
 > Some usage instructions
 - run 'npm install' for dependencies
-- Create a .env file that will contain your postgres login credentials, and the the server port you want to use
+- Create an .env file that will contain your postgres login credentials, and the the server port you want to use
 See below:
 ```
-PORT=<Your port number here>
-DB_USER=<'Your user name here'>
-DB_PASSWORD=<'your password here'>
+PORT=<Port number here>
+DB_USER=<'User name here'>
+DB_PASSWORD=<'Password here'>
 ```
 
-- Add your username in to the script: 'initialize-db' in the package json
+- In the package.json, add your username to the 'initialize-db' script
+See below:
 ```
 "initialize-db": "psql -d postgres -U <USER NAME HERE> -f schema.sql"
 ```
