@@ -21,8 +21,10 @@
 - See below:
 ```
 PORT=<Port number here>
-DB_USER=<'User name here'>
-DB_PASSWORD=<'Password here'>
+DB_USER=<'USER NAME HERE'>
+DB_HOST=<'HOST HERE'>
+DB_PASSWORD=<'PASSWORD HERE'>
+DB_PORT=<PORT NUMBER HERE>
 ```
 3. In the package.json, add your username to the 'initialize-db' script
 - See below:
