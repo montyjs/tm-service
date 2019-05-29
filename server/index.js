@@ -20,6 +20,10 @@ app.get('/reviews', (req, res) => {
   });
 });
 
+app.get('/bundle', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/dist/bundle.js'));
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`listening on port ${process.env.PORT}`);
 });
