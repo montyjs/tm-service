@@ -16,6 +16,7 @@
 ## Usage
 
 > Some usage instructions
+* Development
 1. run 'npm install' for dependencies
 2. Create an .env file that will contain your postgres login credentials, and the the server port you want to use
 - See below:
@@ -36,6 +37,17 @@ DB_PORT=<PORT NUMBER HERE>
 6. run script 'npm run build-dev' to startup webpack
 7. run script 'npm start' to startup the server
 
+* Deploy
+1. run 'npm install' for dependencies
+2. Create an .env file that will contain your postgres connection string
+- See below:
+```
+DB_URI=<CONNECTION STRING HERE>
+```
+3. Create a 'reviews' table in your database
+4. run script 'npm run real-seed' to seed the database
+5. run script 'npm run build-dev' to startup webpack
+6. run script 'npm start' to startup the server
 
 ## Requirements
 
