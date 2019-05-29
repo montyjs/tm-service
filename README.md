@@ -16,25 +16,23 @@
 ## Usage
 
 > Some usage instructions
-- run 'npm install' for dependencies
-- Create an .env file that will contain your postgres login credentials, and the the server port you want to use
-See below:
+1. run 'npm install' for dependencies
+2. Create an .env file that will contain your postgres login credentials, and the the server port you want to use
+- See below:
 ```
 PORT=<Port number here>
 DB_USER=<'User name here'>
 DB_PASSWORD=<'Password here'>
 ```
-
-- In the package.json, add your username to the 'initialize-db' script
-See below:
+3. In the package.json, add your username to the 'initialize-db' script
+- See below:
 ```
 "initialize-db": "psql -d postgres -U <USER NAME HERE> -f schema.sql"
 ```
-
-- run script 'npm run initialize-db' to setup the database
-- run script 'npm run real-seed' to seed the database
-- run script 'npm run build-dev' to startup webpack
-- run script 'npm start' to startup the server
+4. run script 'npm run initialize-db' to setup the database
+5. run script 'npm run real-seed' to seed the database
+6. run script 'npm run build-dev' to startup webpack
+7. run script 'npm start' to startup the server
 
 
 ## Requirements
