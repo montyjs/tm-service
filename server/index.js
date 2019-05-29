@@ -3,10 +3,12 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 const { getAll } = require('../database/index.js');
 
 const app = express();
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, '/../public/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
