@@ -51,6 +51,8 @@ const novote = [4, 0, 1, 8, 9, 0, 7, 3, 5, 10, 2, 6, 0, 5, 9];
 
 const postdates = [`7 years ago`, ` 2 years ago`, `3 years ago`, `10 months ago`, `2 weeks ago`, `1 year ago`, `6 months ago`, `3 weeks ago`, `7 years ago`, `5 years ago`, `1 week ago`, `2 months ago`, `5 years ago`, `1 years ago`];
 
+const images = ['https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_1.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-1.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-2.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-1.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-2.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-1.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-2.jpeg'];
+
 const data = [];
 
 for (let i = 0; i < reviews.length; i += 1) {
