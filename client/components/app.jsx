@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */
@@ -50,17 +51,26 @@ class App extends React.Component {
 
   showImages(image1, image2) {
     if (image1 && !image2) {
+      const image1style = {
+        backgroundImage: `url(${image1})`,
+      };
       return (
         <div className="images">
-          <div className="image1"> </div>
+          <div className="image1" style={image1style}> </div>
         </div>
       );
     }
     if (image1 && image2) {
+      const image1style = {
+        backgroundImage: `url(${image1})`,
+      };
+      const image2style = {
+        backgroundImage: `url(${image2})`,
+      };
       return (
         <div className="images">
-          <div className="image1"> </div>
-          <div className="image2"> </div>
+          <div className="image1" style={image1style}> </div>
+          <div className="image2" style={image2style}> </div>
         </div>
       );
     }
@@ -92,7 +102,12 @@ class App extends React.Component {
       <div className="parent-level">
         <div className="top-border">
           {this.state.reviews.map(review => (
-            <Reviews review={review} starColor={this.starColor} upVote={this.upVote} />
+            <Reviews
+              review={review}
+              starColor={this.starColor}
+              upVote={this.upVote}
+              showImages={this.showImages}
+            />
           ))}
         </div>
       </div>

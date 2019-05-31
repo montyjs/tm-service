@@ -17,5 +17,6 @@ CREATE TABLE reviews (
   recommended BOOLEAN NOT NULL,
   yesvote INT NOT NULL,
   novote INT NOT NULL,
-  images VARCHAR NOT NULL
+  image1 VARCHAR NOT NULL,
+  image2 VARCHAR NOT NULL
 );

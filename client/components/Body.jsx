@@ -31,10 +31,7 @@ const Body = (props) => {
       <div className="recommended">
         {recommendation}
       </div>
-      <div className="images">
-        <div className="image1"> </div>
-        <div className="image2"> </div>
-      </div>
+      {props.showImages(props.image1, props.image2)}
     </div>
   );
 };

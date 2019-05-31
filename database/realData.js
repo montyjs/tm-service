@@ -3,6 +3,7 @@
 /* eslint-disable no-console */
 /* eslint-disable quotes */
 const { pool } = require('./index');
+const { RDSpool } = require('./RDSpool');
 
 const reviews = [
   'I was skeptical when I bought them, but after 3 trips to the gym, and doing some hard bouldering projects, I have discovered these are such a great shoe, recommend to anyone',
@@ -51,9 +52,9 @@ const novote = [4, 0, 1, 8, 9, 0, 7, 3, 5, 10, 2, 6, 0, 5, 9];
 
 const postdates = [`7 years ago`, ` 2 years ago`, `3 years ago`, `10 months ago`, `2 weeks ago`, `1 year ago`, `6 months ago`, `3 weeks ago`, `7 years ago`, `5 years ago`, `1 week ago`, `2 months ago`, `5 years ago`, `1 years ago`];
 
-const image1 = ['https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_1.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-1.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-1.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-1.jpeg'];
+const image1 = ['', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-1.jpeg', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-1.jpeg', '', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-1.jpeg', '', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_1.jpeg', ''];
 
-const image2 = ['https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-2.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-2.jpeg', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-2.jpeg'];
+const image2 = ['', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-2.jpeg', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-2.jpeg', '', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-2.jpeg', '', '', '', '', ''];
 
 const data = [];
 
@@ -68,12 +69,13 @@ for (let i = 0; i < reviews.length; i += 1) {
     recommended: recommended[i],
     yes: yesvote[i],
     no: novote[i],
-    images: false,
+    image1: image1[i],
+    image2: image2[i],
   });
 }
 
 const realSeed = (entrydata) => {
-  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, sizerating, recommended, yesvote, novote, images) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)';
+  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, sizerating, recommended, yesvote, novote, image1, image2) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)';
   let params;
   let obj;
   for (let i = 0; i < data.length; i += 1) {
@@ -88,7 +90,8 @@ const realSeed = (entrydata) => {
       obj.recommended,
       obj.yes,
       obj.no,
-      'someurl.url',
+      obj.image1,
+      obj.image2,
     ];
     pool.query(queryString, params, (err) => {
       if (err) {
