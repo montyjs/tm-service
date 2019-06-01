@@ -17,6 +17,7 @@ const pool = new Pool({
 const getAll = (cb) => {
   console.log('request at database, retrieving data');
   console.log('current NODE_ENV', process.env.NODE_ENV);
+  console.log('current DB_URI', process.env.DB_URI);
   const queryString = 'SELECT * FROM reviews';
   RDSpool.query(queryString, (err, result) => {
     if (err) {
