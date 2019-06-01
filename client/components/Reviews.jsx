@@ -25,7 +25,6 @@ const Reviews = (props) => (
       image2={props.review.image2}
       showImages={props.showImages}
     />
-    {console.log('complete review: ', props.review)}
     <Footer
       yes={props.review.yesvote}
       no={props.review.novote}
