@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/reviews', (req, res) => {
+  console.log('request at server, heading to database');
   getAll((result) => {
     if (!result) {
       res.sendStatus(400);

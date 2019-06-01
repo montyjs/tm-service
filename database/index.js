@@ -15,11 +15,13 @@ const pool = process.env.NODE_ENV === 'production'
   });
 
 const getAll = (cb) => {
+  console.log('request at database, retrieving data');
   const queryString = 'SELECT * FROM reviews';
   pool.query(queryString, (err, result) => {
     if (err) {
       return console.error(err.message);
     }
+    console.log('results received, sending to callback now');
     return cb(result.rows);
   });
 };

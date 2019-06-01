@@ -10,6 +10,9 @@ RUN npm install
 
 COPY . /src/app
 
+ENV NODE_ENV='production'
+ENV DB_URI=postgresql://rei:batman123@reviews.c6cy0b3pfl6c.us-west-2.rds.amazonaws.com:5432/reviews
+
 EXPOSE 3002
 
 CMD ["npm", "start"]
