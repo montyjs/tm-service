@@ -28,7 +28,7 @@ class App extends React.Component {
 
   getReviews() {
     console.log('fetching after component mounted');
-    fetch('/reviews')
+    fetch(`http://${window.location.hostname}:3002/reviews`)
       .then(response => response.json())
       .then((result) => {
         this.setState({
