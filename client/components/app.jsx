@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   getReviews() {
-    fetch('http://localhost:3002/reviews')
+    fetch(`http://${window.location.hostname}/reviews`)
       .then(response => response.json())
       .then((result) => {
         this.setState({
