@@ -1,4 +1,10 @@
 node_modules
 npm-debug.log
 .gitignore
-Dockerfile
+Dockerfile# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore

@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 require('dotenv').config();
 const { Pool } = require('pg');
-const { RDSpool } = require('./RDSpool');
 
 const pool = new Pool({
   connectionString: process.env.DB_URI,
@@ -19,7 +18,7 @@ const getAll = (cb) => {
   console.log('current NODE_ENV', process.env.NODE_ENV);
   console.log('current DB_URI', process.env.DB_URI);
   const queryString = 'SELECT * FROM reviews';
-  RDSpool.query(queryString, (err, result) => {
+  pool.query(queryString, (err, result) => {
     if (err) {
       return console.error(err.message);
     }
