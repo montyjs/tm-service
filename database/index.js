@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 require('dotenv').config()
+
 const { Pool } = require('pg')
 
 /******************* DATABASE CONNECTION *********************/
@@ -21,11 +22,14 @@ const pool = process.env.NODE_ENV === 'production'
 const getAll = (cb) => {
   const queryString = 'SELECT * FROM reviews'
   pool.query(queryString, (err, result) => {
-    if (err) {
-      return console.error(err.message)
-    }
-    console.log('results received, sending to callback now')
-    return cb(result.rows)
+    err ? console.error(err.message) : cb(result.rows)
+  })
+}
+
+const getOne = (id, cb) => {
+  const queryString = `SELECT * FROM reviews WHERE id=${id}`
+  pool.query(queryString, (err, result) => {
+    err ? console.error(err.message) : cb(result.rows);
   })
 }
 
@@ -33,5 +37,6 @@ const getAll = (cb) => {
 
 module.exports = {
   pool,
-  getAll
+  getAll,
+  getOne
 }

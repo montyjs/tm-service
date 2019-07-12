@@ -59,10 +59,10 @@ const seedDB = () => {
       })
     }
   } else {
-    while (count < 100) {
+    while ( count < 100 ) {
       params = fakeEntry()
       pool.query(queryString, params, (err) => {
-        if (err) {
+        if ( err ) {
           return console.error('error saving entry: ', err)
         }
         count++

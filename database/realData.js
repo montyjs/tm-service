@@ -51,7 +51,6 @@ const image1 = ['', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/f
 
 const image2 = ['', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-2.jpeg', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-2.jpeg', '', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-2.jpeg', '', '', '', '', ''];
 
-const data = [];
 
 module.exports = {
   reviews,
