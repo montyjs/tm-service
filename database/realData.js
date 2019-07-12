@@ -2,9 +2,6 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-console */
 /* eslint-disable quotes */
-const { pool } = require('./index');
-const { RDSpool } = require('./RDSpool');
-
 const reviews = [
   'I was skeptical when I bought them, but after 3 trips to the gym, and doing some hard bouldering projects, I have discovered these are such a great shoe, recommend to anyone',
   `When I bought these shoes I bought them cause they were cheap. To me these shoes are not worth the bang for your buck. I bought them and within a month I blew them out and had to get a second pair. Within two more months I had worn them out. I bought these shoes cause they were cheap, and that's what they are, cheaply made shoes that are just awful I thought that La Sportiva was bad, but then i gave them a third chance and bought the Finales when they first dropped on the market. I've had the Finales for 8 months now and I tell any new beginner thinking about getting shoes to get the Finales over these shoes. The Finales are great shoes that fit well, stick to the wall and fill amazing. The Tarantulaces feel awful, don't hold up well, and they don't stick at all. If I were to go back and buy beginner shoes again, I would pay the 20 dollars extra for the Finales. I hope that this helps if you are considering this shoe.`,
@@ -38,19 +35,17 @@ const titles = [
   `Great Climbing Shoes`, `good all around`,
 ];
 
-const usernames = [`Sloth`, `Crimping Man`, `Kv216501`, `TJay`, `Desertrat`, `Sega92`, `Christoher`, `Noah22`, `mwallh`, `Tony`, `mcwap`, `kblake`, `Bryan`, `turn09`];
-
-const sizeratings = [4, 3, 3, 3, 3, 3, 0, 3, 2, 2, 3, 2, 4, 3];
+const userNames = [`Sloth`, `Crimping Man`, `Kv216501`, `TJay`, `Desertrat`, `Sega92`, `Christoher`, `Noah22`, `mwallh`, `Tony`, `mcwap`, `kblake`, `Bryan`, `turn09`];
 
 const stars = [4, 1, 5, 4, 5, 5, 3, 5, 4, 4, 5, 3, 5, 5];
 
 const recommended = [true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
 
-const yesvote = [0, 3, 6, 22, 41, 9, 30, 18, 11, 22, 39, 25, 13, 15, 5];
+const yesVote = [0, 3, 6, 22, 41, 9, 30, 18, 11, 22, 39, 25, 13, 15, 5];
 
-const novote = [4, 0, 1, 8, 9, 0, 7, 3, 5, 10, 2, 6, 0, 5, 9];
+const noVote = [4, 0, 1, 8, 9, 0, 7, 3, 5, 10, 2, 6, 0, 5, 9];
 
-const postdates = [`7 years ago`, ` 2 years ago`, `3 years ago`, `10 months ago`, `2 weeks ago`, `1 year ago`, `6 months ago`, `3 weeks ago`, `7 years ago`, `5 years ago`, `1 week ago`, `2 months ago`, `5 years ago`, `1 years ago`];
+const postDates = [`7 years ago`, ` 2 years ago`, `3 years ago`, `10 months ago`, `2 weeks ago`, `1 year ago`, `6 months ago`, `3 weeks ago`, `7 years ago`, `5 years ago`, `1 week ago`, `2 months ago`, `5 years ago`, `1 years ago`];
 
 const image1 = ['', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.4-1.jpeg', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_2-1.jpeg', '', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec.image.3-1.jpeg', '', '', '', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/fec_image_1.jpeg', ''];
 
@@ -58,47 +53,15 @@ const image2 = ['', 'https://rei-fec-reviews.s3-us-west-2.amazonaws.com/images/f
 
 const data = [];
 
-for (let i = 0; i < reviews.length; i += 1) {
-  data.push({
-    username: usernames[i],
-    postdate: postdates[i],
-    title: titles[i],
-    review: reviews[i],
-    rating: stars[i],
-    sizerating: sizeratings[i],
-    recommended: recommended[i],
-    yes: yesvote[i],
-    no: novote[i],
-    image1: image1[i],
-    image2: image2[i],
-  });
+module.exports = {
+  reviews,
+  titles,
+  userNames,
+  stars,
+  recommended,
+  yesVote,
+  noVote,
+  postDates,
+  image1,
+  image2
 }
-
-const realSeed = (entrydata) => {
-  const queryString = 'INSERT INTO reviews (userName, postDate, title, review, rating, sizerating, recommended, yesvote, novote, image1, image2) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)';
-  let params;
-  let obj;
-  for (let i = 0; i < data.length; i += 1) {
-    obj = entrydata[i];
-    params = [
-      obj.username,
-      obj.postdate,
-      obj.title,
-      obj.review,
-      obj.rating,
-      obj.sizerating,
-      obj.recommended,
-      obj.yes,
-      obj.no,
-      obj.image1,
-      obj.image2,
-    ];
-    pool.query(queryString, params, (err) => {
-      if (err) {
-        return console.error(err.message);
-      }
-    });
-  }
-};
-
-realSeed(data);
