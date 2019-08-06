@@ -64,3 +64,6 @@ module.exports = {
   image1,
   image2
 }
+
+
+console.log(reviews.length)
