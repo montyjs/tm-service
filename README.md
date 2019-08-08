@@ -40,7 +40,7 @@ This componenet was deployed to AWS via Elastic Beanstalk.  A proxy server was a
 
 This repo is configured to run in a production or developement environment.  Environment specific instructions are below:
 
-###### Development
+#### Development
 
 1. Install dependencies by running 'npm install'
 2. Create an env file for your local postgres login credentials and server port.  See below for an example config:
@@ -60,7 +60,7 @@ DB_PORT=<PORT NUMBER HERE>
 6. Run script 'build:dev' to compile a bundle.js from React via Webpack.
 7. Run script 'start' bring up the server.
 
-###### Production
+#### Production
 
 - Follow all instructions above except for step 2.  Instead of your local postgres connection details create a variale for your database connection string.  See below:
 ```
